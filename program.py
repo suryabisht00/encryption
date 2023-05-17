@@ -2,6 +2,7 @@ import random
 
 def Encoding():
     message=input("enter your message for Encoding:->\n ")
+    global choice1
     choice1=["a","b","c","d","e","f","g","h","i","j","k","l",
         "m","n","o","p","q","r","s","t","u","v","w","x","y","z",
         '!','@','#','$','%','^','&','*','-','+','=','~']
@@ -24,6 +25,12 @@ def Encoding():
     print("Your Message :-",binary_encrypted)
     print("your Encryption key :-",key)
 
+    
+    with open(f"encryption{random.choice(choice1)}.txt","w") as f:
+        f.write(f"key is :-{key} \n")
+        f.write(f"message is :-{binary_encrypted} \n")
+        
+
 
 
 def Decrypt():
@@ -39,6 +46,11 @@ def Decrypt():
         decoded_ascii=decoded_ascii+ascii_decode
 
     print('your decoded message is :- \n \t',decoded_ascii)
+
+
+    with open(f"encryption{random.choice(choice1)}.txt","w") as f:
+        f.write(f"key is :-{inputed_key} \n")
+        f.write(f"message is :-{decoded_ascii} \n")
 
 
 
